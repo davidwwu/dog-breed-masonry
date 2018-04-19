@@ -152,10 +152,10 @@ class App extends Component {
   cellRenderer = ({ index, key, parent, style }) => {
     const img_src = this.state.breedsList[index];
   
-    // Fetch image sizes
-    requestImageSize(img_src)
-    .then(size => console.log(size))
-    .catch(err => console.error(err));
+    // // Fetch image sizes
+    // requestImageSize(img_src)
+    // .then(size => console.log(size))
+    // .catch(err => console.error(err));
 
     return (
       <CellMeasurer
