@@ -5,6 +5,7 @@ import './App.css';
 import axios from 'axios';
 import { AutoSizer, CellMeasurer, CellMeasurerCache, createMasonryCellPositioner, Masonry, WindowScroller } from 'react-virtualized';
 import 'react-virtualized/styles.css';
+import requestImageSize from 'request-image-size';
 
 class App extends Component {
   constructor(props) {
@@ -67,7 +68,7 @@ class App extends Component {
     // Default sizes help Masonry decide how many images to batch-measure
     this.cache = new CellMeasurerCache({
       defaultHeight: 300,
-      defaultWidth: 200,
+      defaultWidth: 400,
       fixedWidth: true
     })
   }
@@ -151,6 +152,11 @@ class App extends Component {
   cellRenderer = ({ index, key, parent, style }) => {
     const img_src = this.state.breedsList[index];
   
+    // Fetch image sizes
+    requestImageSize(img_src)
+    .then(size => console.log(size))
+    .catch(err => console.error(err));
+
     return (
       <CellMeasurer
         cache={this.cache}
@@ -163,7 +169,7 @@ class App extends Component {
             src={img_src}
             style={{
               width: this.columnWidth,
-              height: 200
+              height: 300
             }}
           />
         </div>
