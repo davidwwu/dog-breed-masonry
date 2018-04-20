@@ -6,11 +6,11 @@
   "dependencies": {
     "ajv": "6.4.0",
     "axios": "0.18.0",
+    "material-ui": "0.20.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",
-    "react-virtualized": "9.18.5",
-    "request-image-size": "2.1.0"
+    "react-virtualized": "9.18.5"
   },
   "scripts": {
     "start": "react-scripts start",
