@@ -5,7 +5,7 @@ import './App.css';
 import axios from 'axios';
 import { AutoSizer, CellMeasurer, CellMeasurerCache, createMasonryCellPositioner, Masonry, WindowScroller } from 'react-virtualized';
 import 'react-virtualized/styles.css';
-import requestImageSize from 'request-image-size';
+import ImageCell from './components/ImageCell';
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class App extends Component {
     this.list = {};           // store initial breed list
     this.columnCount = 0;
     this.columnWidth = 400;
-    this.gutterSize = 10;
+    this.gutterSize = 20;
 
     this.state = {
       breeds_ajax: [],        // list of all image requests (flattened out from the original list tree) 
@@ -126,7 +126,7 @@ class App extends Component {
   }
 
   // Render the masonry component
-  renderMasonry = ({ height, width, onChildScroll}) => {
+  renderMasonry = ({ height, width, onChildScroll }) => {
     this._windowWidth = width;
 
     this.calculateColumnCount();
@@ -151,11 +151,6 @@ class App extends Component {
   // Render each cell/image
   cellRenderer = ({ index, key, parent, style }) => {
     const img_src = this.state.breedsList[index];
-  
-    // // Fetch image sizes
-    // requestImageSize(img_src)
-    // .then(size => console.log(size))
-    // .catch(err => console.error(err));
 
     return (
       <CellMeasurer
@@ -165,12 +160,8 @@ class App extends Component {
         parent={parent}
       >
         <div style={style}>
-          <img
+          <ImageCell
             src={img_src}
-            style={{
-              width: this.columnWidth,
-              height: 300
-            }}
           />
         </div>
       </CellMeasurer>
@@ -192,8 +183,6 @@ class App extends Component {
         </header>
         
         <div className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload. <br />
-
           {this.state.breedsListReady ?
             <WindowScroller>
               {this.renderAutoSizer}

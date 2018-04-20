@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+*:focus {
+  outline: none;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -20,6 +24,34 @@
 
 .App-intro {
   font-size: large;
+  padding-left: 20px;
+  padding-top: 40px;
+  margin: auto;
+  
+}
+
+@media (min-width: 1280px) {
+  .App-intro {
+    width: 1260px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .App-intro {
+    width: 840px;
+  }
+}
+
+@media (max-width: 859px) {
+  .App-intro {
+    width: 420px;
+  }
+}
+
+@media (max-width: 439px) {
+  .App-intro {
+    padding-left: 0px;
+  }
 }
 
 @keyframes App-logo-spin {
