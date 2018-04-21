@@ -9,8 +9,6 @@ This app is bootstrapped using `create-react-app` with following packages instal
 * [react-transition-group](https://github.com/reactjs/react-transition-group) for transitions when components are mounted and unmounted.
 * [react-virtualized](https://github.com/bvaughn/react-virtualized) for just-in-time component rendering and for masonry support.
 
----
-
 ## TODO
 
 There are some improvments I'd like to make if given more time.
