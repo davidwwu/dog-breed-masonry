@@ -27,7 +27,23 @@
   padding-left: 20px;
   padding-top: 40px;
   margin: auto;
-  
+}
+
+.fade-enter {
+  opacity: 0.01;
+  transform: translateY(50%);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: all 400ms ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
 @media (min-width: 1280px) {
@@ -55,6 +71,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
