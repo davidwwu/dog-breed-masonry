@@ -1,6 +1,6 @@
 ## About
 
-This is a quick [demo](https://davidwu220.github.io/dog-breed-masonry/) which lazy-loads all images from the [Dog API](https://dog.ceo/dog-api/).
+This is a quick [demo](https://davidwwu.github.io/dog-breed-masonry/) which lazy-loads all images from the [Dog API](https://dog.ceo/dog-api/).
 
 This app is bootstrapped using `create-react-app` with following packages installed:
 
